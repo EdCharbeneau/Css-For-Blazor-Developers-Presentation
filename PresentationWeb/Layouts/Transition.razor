@@ -1,0 +1,20 @@
+﻿<div class="grid">
+    <div id="frame1"></div>
+    <div id="frame2"></div>
+    <div id="frame3"></div>
+    <div id="frame4"></div>
+    <div id="frame5"></div>
+    <div id="frame6"></div>
+    <div id="content">
+        <h1>@Title</h1>
+        <h2>@Subtitle</h2>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string Subtitle { get; set; }
+}

@@ -1,0 +1,17 @@
+﻿div {
+    background-color: #282828;
+    padding: 0 .5em;
+    display:flex;
+    flex-direction:row;
+    gap:1em;
+    align-items:baseline;
+}
+h1 {
+    color: var(--secondary-color-darker);
+    margin:0;
+}
+
+::deep h2 {
+    color: var(--primary-color);
+    margin:0;
+}

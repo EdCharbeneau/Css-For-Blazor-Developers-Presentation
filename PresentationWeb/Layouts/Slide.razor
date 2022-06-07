@@ -1,0 +1,10 @@
+﻿@if (IsVisible)
+{
+    @ChildContent
+}
+@code {
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+}

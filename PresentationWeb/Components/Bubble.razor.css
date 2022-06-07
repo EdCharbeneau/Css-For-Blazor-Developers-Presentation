@@ -1,0 +1,28 @@
+﻿/* --prop: var(value, defaultValue) */
+/* 
+        Similar to:
+        public class Foo {
+            private string _bgColor = white;
+            public string bgColor {
+               get { return _bgColor; }
+               set { _bgColor = value; }
+            }
+*/
+.component-scope {
+    --bg-color: var(--bubble-bg-color, white);
+    --color: var(--bubble-text-color, black);
+    --size: var(--bubble-size, 16px);
+}
+
+span {
+    font-size: var(--size);
+    background-color: var(--bg-color);
+    color: var(--color);
+    line-height: 3em;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    margin: .5em;
+}

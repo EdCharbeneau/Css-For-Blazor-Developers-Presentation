@@ -1,0 +1,29 @@
+﻿@namespace CssProps
+
+<ContentSlide Title="CSS Custom Properties">
+    <Content>
+        <ul>
+            <li>CSS Custom Properties are also refered to as CSS Variables.</li>
+            <li>CSS variables follow the same cascading rules as CSS</li>
+            <li>CSS variables do not require a Sass or compilation, they are web standard</li>
+            <li>CSS variables can be modified at runtime, unlike Sass variables</li>
+            <li>CSS variables are valid inside Sass code, <a class="primary-darker" href="https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables"> but not with built in Sass color functions</a></li>
+        </ul>
+    </Content>
+    <Aside>
+        <CodeHighlight CodeLanguage="css">
+            --foo: #000;
+        </CodeHighlight>
+        <p>Set a variable</p>
+        <CodeHighlight CodeLanguage="css">
+            color: var(--foo);
+        </CodeHighlight>
+        <p>Get a variable</p>
+        <CodeHighlight CodeLanguage="css">
+            :root { --foo: #000; } /*global*/
+                
+            .baz { --foo: #FFF; }
+        </CodeHighlight>
+        <p>Scope a variable</p>
+    </Aside>
+</ContentSlide>

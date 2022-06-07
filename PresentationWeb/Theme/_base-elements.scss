@@ -1,0 +1,27 @@
+﻿body {
+    background-color: var(--app-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color-darker);
+}
+
+.img-responsive {
+    max-width: 100%;
+}
+
+a, a.primary {
+    color: var(--primary-color);
+}
+
+    a.primary-darker {
+        color: var(--primary-color-darker);
+    }
+
+    a.secondary {
+        color: var(--secondary-color);
+    }
+
+    a.secondary-darker {
+        color: var(--secondary-color-darker);
+    }

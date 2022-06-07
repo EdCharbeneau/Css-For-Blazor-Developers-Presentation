@@ -1,0 +1,49 @@
+﻿@namespace CssProps
+
+<ContentSlide Title="Controling Scope with CSS Variables">
+    <Content>
+        <p>
+            Using CSS variables to control scope along with component parameters allows for global settings, isolated styles, and parameter settings all at once.
+        </p>
+        <CodeHighlight CodeLanguage="css">
+            :root {
+                --public-color: blue;
+            }
+            .component-scope {
+                --private-color: var(--public-color, white);
+            }
+            .element {
+                color: var(--private-color)
+            }
+        </CodeHighlight>
+        <CodeHighlight CodeLanguage="html">
+            &lt;div class="element" style="--private-color: orange;"&gt;
+        </CodeHighlight>
+    </Content>
+    <Aside>
+        <div class="flex">
+            <label>Choose a color: @SelectedColor</label>
+            <input type="color" @bind-value="@SelectedColor" @bind-value:event="oninput" />
+            <label>Choose a size: @SelectedSize </label>
+            <input type="range" @bind-value="SelectedSize" @bind-value:event="oninput" />
+            <Bubble BackgroundColor="@SelectedColor" Size="SelectedSize" Color="@invertedColor" />
+        </div>
+    </Aside>
+</ContentSlide>
+
+@code {
+    [Parameter]
+    public string SelectedColor { get; set; } = "#003366";
+
+    string invertedColor => $"#{invertColor(SelectedColor).ToString("X")}";
+
+    uint invertColor(string color)
+    {
+        var x = color.Replace("#", "FF");
+        var v = Convert.ToUInt32(x, 16); ;
+        return 0xFFFFFFFF ^ v;
+    }
+
+    [Parameter]
+    public int SelectedSize { get; set; } = 32;
+}

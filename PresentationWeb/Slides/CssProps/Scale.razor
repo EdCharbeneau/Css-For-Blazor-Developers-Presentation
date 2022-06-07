@@ -1,0 +1,27 @@
+﻿@namespace CssProps
+@using PresentationWeb.Layouts.Agenda;
+<AgendaSlide Title="Levels of scope" Subtitle="Finding the right fit">
+    <AgendaItem Number="1" Topic="Global Customization">
+        <ol>
+            <li>A global set of CSS or Sass themes the application</li>
+            <li>No CSS Isolation is used</li>
+            <li>Any developer with access to the CSS/Sass source can change all aspects of the application's theme</li>
+            <li>Example: Telerik UI for Blazor</li>
+        </ol>
+    </AgendaItem>
+    <AgendaItem Number="2" Topic="Balanced Customization">
+        <ol>
+            <li>A global settings control the theme of the application and components</li>
+            <li>Some CSS Isolation is used</li>
+            <li>Components can be themed at the individual level through properties</li>
+            <li>Example: This application (presentation)</li>
+        </ol>
+    </AgendaItem>
+    <AgendaItem Number="3" Topic="Minimal Customization">
+        <ol>
+            <li>CSS Isoliation is used as much as possible</li>
+            <li>Theme is fully controled through component properties</li>
+            <li>Changes to the theme through .razor.css files are managed</li>
+        </ol>
+    </AgendaItem>
+</AgendaSlide>

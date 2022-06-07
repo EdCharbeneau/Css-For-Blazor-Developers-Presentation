@@ -1,0 +1,14 @@
+﻿<button class="button @CssClass" @onclick="@HandleClick">@Text</button>
+
+@code {
+    [Parameter]
+    public string CssClass { get; set; }
+
+    [Parameter]
+    public string Text { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+    void HandleClick(MouseEventArgs args) => OnClick.InvokeAsync(args);
+}

@@ -1,0 +1,29 @@
+﻿@using BlazorComponentUtilities
+<div class="component-scope">
+    <span style="@inlineStyle">@Text</span>
+</div>
+
+@code {
+    [Parameter]
+    public string Text { get; set; } = "CSS";
+
+    [Parameter]
+    public string? BackgroundColor { get; set; }
+
+    [Parameter]
+    public string? Color { get; set; }
+
+    [Parameter]
+    public int Size { get; set; } = 24;
+
+    StyleBuilder inlineStyle => StyleBuilder.Empty()
+    .AddStyle(prop: "--bg-color",
+              value: BackgroundColor,
+              when: !string.IsNullOrWhiteSpace(BackgroundColor))
+    .AddStyle(prop: "--color",
+              value: Color,
+              when: !string.IsNullOrWhiteSpace(Color))
+    .AddStyle(prop: "--size",
+              value: $"{Size}px")
+    ;
+}

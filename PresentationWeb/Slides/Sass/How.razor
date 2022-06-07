@@ -1,0 +1,36 @@
+﻿@namespace Sass
+
+<ContentSlide Title="How to install Sass" AsideBottom="true">
+    <Content>
+        <ul>
+            <li>
+                Since Sass is a Dart binary it can be installed without JavaScript or npm
+            </li>
+            <li>
+                Alternatively it can easily be installed an ran using JavaScript and npm.
+            </li>
+            <li>
+                Depending on your dev machine's configuration, it is likely just two commands to get started.
+            </li>
+            <li>
+                Avoid the WebCompiler extension, it's no longer supported.
+            </li>
+        </ul>
+    </Content>
+    <Aside>
+        <CodeHighlight CodeLanguage="shell">
+            // Download from GitHub.com/sass, then manually add it to the system path 
+            // OR use Chocolaty on Windows or Brew for Mac
+            $ [choco|brew] install sass
+            // Run Sass
+            $ sass ./input.scss ./output.scss
+            // OR use the Node.js tool chain
+            $ npm install -g sass
+            $ npx sass ./input.scss ./output.scss
+        </CodeHighlight>
+    </Aside>
+</ContentSlide>
+
+@code {
+
+}

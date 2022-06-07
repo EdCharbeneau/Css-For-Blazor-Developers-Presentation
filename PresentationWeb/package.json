@@ -1,0 +1,17 @@
+{
+  "name": "presentationweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jsSass": "npx sass ./Theme/app.scss ./wwwroot/app.css",
+    "jsSass:watch": "npx sass --watch ./Theme/app.scss ./wwwroot/app.css",
+    "sass": "sass ./Theme/app.scss ./wwwroot/app.css",
+    "sass:watch": "sass --watch ./Theme/app.scss ./wwwroot/app.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.52.1"
+  }
+}

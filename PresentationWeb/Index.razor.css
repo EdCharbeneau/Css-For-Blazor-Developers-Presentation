@@ -1,0 +1,7 @@
+﻿div {
+    height: 100%;
+}
+
+    div:focus-visible {
+        outline-offset: 1em;
+    }

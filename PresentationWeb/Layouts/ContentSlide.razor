@@ -1,0 +1,34 @@
+﻿@using BlazorComponentUtilities
+<div class="@cssClass">
+    <h1>@Title</h1>
+    <article>
+        @Content
+    </article>
+    <aside>
+        @Aside
+    </aside>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "Untitled";
+
+    [Parameter]
+    public RenderFragment Content { get; set; } = default!;
+
+    [Parameter]
+    public RenderFragment Aside { get; set; } = default!;
+
+    [Parameter]
+    public bool AsideLeft { get; set; }
+
+    [Parameter]
+    public bool AsideBottom { get; set; }
+
+    CssBuilder cssClass => CssBuilder.Empty()
+    .AddClass(CssBuilder.Empty()
+        .AddClass("aside-right", when: !AsideLeft)
+        .AddClass("aside-left", when: AsideLeft)
+    , when: !AsideBottom)
+    .AddClass("aside-bottom", when: AsideBottom);
+}

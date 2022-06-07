@@ -1,0 +1,31 @@
+﻿.item-marker {
+    background-color: var(--primary-color-darker);
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+li {
+    font-family: var(--font-family-base);
+    font-size: 2rem;
+    color: var(--primary-color);
+    display: grid;
+    grid-column-gap: .5em;
+    grid-template-columns: 1fr 3fr 8fr;
+    align-content: center;
+}
+
+.item-topic {
+    display: grid;
+    justify-content: center;
+    color: var(--secondary-color-darker)
+}
+
+li .item-content {
+    justify-content: left;
+    font-size: var(--font-size-root);
+    color: var(--primary-color-darker);
+}

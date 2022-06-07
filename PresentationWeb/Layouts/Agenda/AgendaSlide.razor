@@ -1,0 +1,29 @@
+﻿<section id="grid">
+    <div id="frame1">
+        <header>
+            <h1 class="vertical-text">
+                @Title
+            </h1>
+        </header>
+        <p class="vertical-text">
+            @Subtitle
+        </p>
+    </div>
+    <div id="frame2">
+    </div>
+    <ol>
+        @ChildContent
+    </ol>
+</section>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+
+    [Parameter]
+    public string Title { get; set; } = "Today's Agenda";
+
+    [Parameter]
+    public string Subtitle { get; set; } = "Writing CSS for Blazor";
+
+}

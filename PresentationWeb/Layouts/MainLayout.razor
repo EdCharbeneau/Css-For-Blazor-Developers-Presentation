@@ -1,0 +1,18 @@
+﻿@inherits LayoutComponentBase
+@inject HighlightService highlightJs
+
+<div>
+    @Body
+</div>
+@code {
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            highlightJs.SetStyleAsync("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-medium.min.css");
+            StateHasChanged();
+        }
+        return base.OnAfterRenderAsync(firstRender);
+    }
+
+}

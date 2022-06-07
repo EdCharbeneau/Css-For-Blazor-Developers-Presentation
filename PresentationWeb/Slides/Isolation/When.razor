@@ -1,0 +1,43 @@
+﻿@namespace Isolation
+
+<ContentSlide Title="When to use CSS Isolation in Blazor" AsideLeft="true">
+    <Content>
+        <ul>
+            <li>
+                Greatly restrict the style of a component so it cannot be effected by CSS external to that component
+            </li>
+            <li>
+                Enforce a consistant theme or design system at the component level
+            </li>
+            <li>
+                Great for domain specific components that are not shared or used in other design systems
+            </li>
+            <li>
+                Does not work well when used directly with Sass. Sass compliation is usually a single I/O, therefor the Sass compiler doesn't "scan" for .scss files in a project.'
+            </li>
+            <li>
+                When a component is removed from a project, the CSS is safely removed with it.
+            </li>
+        </ul>
+    </Content>
+    <Aside>
+        <ul>
+            <li>
+                ✔️ Do Use CSS Isolation when CSS is specific to a component
+            </li>
+
+            <li>
+                ❌Don't Use CSS isolation when the style can be used on many components. Stay DRY and revert to Sass or global CSS styles.
+            </li>
+            <li>
+                ❌Don't Use CSS isolation for public Razor Class Libraries where users need to control the theme.
+            </li>
+            <li>
+                ✔️ Do Use CSS Isolation on new projects
+            </li>
+            <li>
+                🤦‍♂️ Don't rewrite well structured Sass for the sake of "doing it the Blazor way". If it's not broke, don't fix it.
+            </li>
+        </ul>
+    </Aside>
+</ContentSlide>

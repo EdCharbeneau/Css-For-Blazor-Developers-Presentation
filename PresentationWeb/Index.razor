@@ -1,0 +1,111 @@
+﻿@page "/"
+
+<div @ref="presentation" tabindex="0" @onkeydown="OnKeyDown">
+    <Slide @ref="slides[0]">
+        <Agenda />
+    </Slide>
+    <Slide @ref="slides[1]">
+        <Sass.What />
+    </Slide>
+    <Slide @ref="slides[2]">
+        <Sass.When />
+    </Slide>
+    <Slide @ref="slides[3]">
+        <Sass.How />
+    </Slide>
+    <Slide @ref="slides[4]">
+        <Sass.MsBuild />
+    </Slide>
+    <Slide @ref="slides[5]">
+        <Sass.Npm />
+    </Slide>
+    <Slide @ref="slides[6]">
+        <Sass.Tips />
+    </Slide>
+    <Slide @ref="slides[7]">
+        <Transition Title="CSS Isolation"
+                    Subtitle="Scoped, Component based CSS" />
+    </Slide>
+    <Slide @ref="slides[8]">
+        <Isolation.What />
+    </Slide>
+    <Slide @ref="slides[9]">
+        <Isolation.How />
+    </Slide>
+    <Slide @ref="slides[10]">
+        <Isolation.When />
+    </Slide>
+    <Slide @ref="slides[11]">
+        <Isolation.Deep />
+    </Slide>
+    <Slide @ref="slides[12]">
+        <Transition Title="Managing CSS Scope"
+                    Subtitle="Choosing where to allow modifaction" />
+    </Slide>
+    <Slide @ref="slides[13]">
+        <CssProps.Scale />
+    </Slide>
+    <Slide @ref="slides[14]">
+        <CssProps.Basics />
+    </Slide>
+    <Slide @ref="slides[15]">
+        <CssProps.Parameters />
+    </Slide>
+    <Slide @ref="slides[16]">
+        <CssProps.Scope />
+    </Slide>
+    <Slide @ref="slides[17]">
+        <CssProps.CssBuilder />
+    </Slide>
+    <Slide @ref="slides[18]">
+        <Transition Title="Frameworks"
+                    Subtitle="Tailwind, Bootstrap, and Component Libraries" />
+    </Slide>
+    <Slide @ref="slides[19]">
+        <Frameworks.Tailwind />
+    </Slide>
+    <Slide @ref="slides[20]">
+        <Frameworks.Bootstrap />
+    </Slide>
+        <Slide @ref="slides[21]">
+        <Frameworks.ComponentLibs />
+    </Slide>
+</div>
+
+@code {
+    int index = 0;
+    Dictionary<int, Slide?> slides = new();
+
+    ElementReference presentation;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            slides[0].IsVisible = true;
+            StateHasChanged();
+        }
+        base.OnAfterRender(firstRender);
+    }
+    private void OnKeyDown(KeyboardEventArgs args)
+    {
+        if (args.Key == "ArrowRight")
+        {
+            if (index < slides.Count - 1)
+            {
+                slides[index].IsVisible = false;
+
+                index += 1;
+            }
+        }
+        if (args.Key == "ArrowLeft")
+        {
+            if (index > 0)
+            {
+                slides[index].IsVisible = false;
+                index -= 1;
+            }
+        }
+        slides[index].IsVisible = true;
+    }
+}

@@ -1,0 +1,39 @@
+﻿@namespace Isolation
+<ContentSlide Title="Child Components and the ::deep Selector">
+    <Content>
+        <p> 
+            Sometimes we need to target the children of our componets which are using CSS Isolation. To do this we'll need the ::deep selector.
+        </p>
+        <div class="grid">
+            <CodeHighlight CodeLanguage="html">
+                &lt;div&gt;
+                    &lt;h1&gt;Parent&lt;/h1&gt;
+                    @@ChildContent
+                &lt;/div&gt;
+                &lt;Parent&gt;
+                    &lt;h2&gt;Child&lt;/h2&gt;
+                &lt;/Parent&gt;
+            </CodeHighlight>
+                <CodeHighlight CodeLanguage="css">
+                h1 {
+                    color: orange;
+                }
+
+                ::deep h2 {
+                    color: blue;
+                }
+                </CodeHighlight>
+            <div class="full">
+                <Parent>
+                    <h2>Child</h2>
+                </Parent>
+            </div>
+        </div>
+    </Content>
+    <Aside>
+        <h3>Tip</h3>
+        <p>
+            If you begin writing a lot of ::deep selectors on a component, it's likely you're missing an abstraction or the CSS should be scoped to the child component.
+        </p>
+    </Aside>
+</ContentSlide>

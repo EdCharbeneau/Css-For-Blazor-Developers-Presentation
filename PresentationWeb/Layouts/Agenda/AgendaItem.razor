@@ -1,0 +1,18 @@
+﻿<li>
+    <span class="item-marker">@Number.</span>
+    <span class="item-topic">@Topic</span>
+    <div class="item-content">
+         @ChildContent
+    </div>
+</li>
+
+@code {
+    [Parameter]
+    public int Number { get; set; }
+
+    [Parameter]
+    public string Topic { get; set; } = default!;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+}

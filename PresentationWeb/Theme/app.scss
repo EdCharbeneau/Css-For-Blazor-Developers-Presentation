@@ -1,0 +1,38 @@
+﻿@use "_normalize";
+@use "_typebase";
+@use "_base-elements";
+@use "_errors-and-validation";
+@use "_highlightjs-custom";
+
+@font-face {
+    font-family: MouseMemoirs-Regular;
+    src: url(./fonts/MouseMemoirs-Regular.ttf);
+}
+
+:root {
+    --orange-peel: #ed451f;
+    --orange: #fd6012;
+    --denim: #1d1942;
+    --sky: #aeeaf8;
+    --app-background: antiquewhite;
+    --font-family-base: MouseMemoirs-Regular;
+    --font-size-root: 32px;
+    --primary-color-darker: var(--denim);
+    --primary-color: var(--sky);
+    --primary-contrast-color: var(--app-background);
+    --secondary-color: var(--orange);
+    --secondary-contrast-color: var(--app-background);
+    --secondary-color-darker: var(--orange-peel);
+    --info-color: #82ccdd;
+    --info-contrast-color: black;
+    --success-color: #78e08f;
+    --success-contrast-color: black;
+    --warning-color: #fad390;
+    --warning-contrast-color: black;
+    --danger-color: #e55039;
+    --danger-contrast-color: white;
+    //bubbles
+    --bubble-bg-color: var(--primary-color-darker);
+    --bubble-text-color: var(--primary-color);
+    --bubble-size: var(--font-size-root);
+}

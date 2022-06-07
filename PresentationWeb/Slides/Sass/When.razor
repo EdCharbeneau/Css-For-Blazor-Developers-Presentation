@@ -1,0 +1,40 @@
+﻿@namespace Sass
+<ContentSlide Title="When should I use Sass">
+    <Content>
+        <ul>
+            <li>
+                Application wide themes and variables
+            </li>
+            <li>
+                Advanced math, color transformations, maps, and other advanced logic
+            </li>
+            <li>
+                Generic CSS utilities, a.k.a. Mixins
+            </li>
+            <li>
+                Generic component libraries with customizable themes
+            </li>
+            <li>
+                Non-Blazor elements
+            </li>
+            <li>
+                You're using Bootstrap
+            </li>
+        </ul>
+    </Content>
+    <Aside>
+        <CodeHighlight Indent="true" CodeLanguage="scss">
+            //prefix a namespace
+
+            $prefix: ".blzr";
+            #{$prefix}-button {
+            ...
+            }
+            //compiles to
+            .blzr-button {
+            ...
+            }
+        </CodeHighlight>
+        <p>An example of string interpolation.</p>
+    </Aside>
+</ContentSlide>

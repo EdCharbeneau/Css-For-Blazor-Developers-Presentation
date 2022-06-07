@@ -1,0 +1,25 @@
+﻿@namespace Sass
+<ContentSlide Title="How to Build with Node tooling" AsideBottom="true">
+    <Content>
+        <p>
+            Setting up Sass with Node tooling, aka <b>package.json</b> is also straight forward.
+        </p>
+    </Content>
+    <Aside>
+        <p>
+            First run the init command to create a new package.json. If Sass is not installed globally you may use devDependencies instead.
+        </p>
+        <CodeHighlight CodeLanguage="bash">
+            $ npm init
+        </CodeHighlight>
+        <CodeHighlight CodeLanguage="json">
+        "scripts": {
+            "sass": "npx sass ./input.scss ./output.css",
+            "sass:watch": "npx sass --watch ./input.scss ./output.css",
+        },
+        "devDependencies": {
+            "sass": "^1.52.1"
+        }
+        </CodeHighlight>
+    </Aside>
+</ContentSlide>

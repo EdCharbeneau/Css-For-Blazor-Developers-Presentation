@@ -1,0 +1,24 @@
+﻿@namespace Sass
+<ContentSlide Title="How to run Sass from MSBuild" AsideBottom="true">
+    <Content>
+        <p>
+            Adding Sass commands to MSBuild can be configured from the .csproj file in your Blazor project.
+        </p>
+        <p>
+            Note: For Hot Reload use the commandline `sass -watch`. A new build process does not kick off for Hot Reload.
+        </p>
+    </Content>
+    <Aside>
+        <CodeHighlight CodeLanguage="html">
+            &lt;Target Name="BuildCssDev" Condition="'$(Configuration)' == 'Debug'" AfterTargets="Build"&gt;
+                &lt;Exec Command="sass ./Theme/app.scss ./wwwroot/app.css" /&gt;
+            &lt;/Target&gt;
+            &lt;Target Name="BuildCssProd" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Build"&gt;
+                &lt;Exec Command="sass ./Theme/app.scss ./wwwroot/app.css" /&gt;
+            &lt;/Target&gt;
+        </CodeHighlight>
+    </Aside>
+</ContentSlide>
+@code {
+
+}

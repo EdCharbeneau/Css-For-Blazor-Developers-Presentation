@@ -1,0 +1,35 @@
+﻿@namespace Isolation
+
+<ContentSlide Title="How does CSS Isoliton work in Blazor?" AsideBottom="true">
+    <Content>
+        <p>
+            CSS isolation occurs at <b>build time</b>. Blazor rewrites CSS selectors to match markup rendered by the component. The rewritten CSS styles are bundled and produced as a static asset.
+        </p>
+    </Content>
+    <Aside>
+        <div class="grid">
+            <div>
+                <CodeHighlight CodeLanguage="html">
+                    &lt;h1&gt;...
+                </CodeHighlight>
+                <CodeHighlight CodeLanguage="css">
+                    h1 {
+                        color: brown;
+                    }
+                </CodeHighlight>
+                <p>Counter.razor | Counter.razor.css</p>
+            </div>
+            <div>
+                <CodeHighlight CodeLanguage="html">
+                    &lt;h1 b-3xxtam6d07&gt;...
+                </CodeHighlight>
+                <CodeHighlight CodeLanguage="css">
+                    h1[b-3xxtam6d07] {
+                        color: brown;
+                    }
+                </CodeHighlight>
+                <p>Generated output</p>
+            </div>
+        </div>
+    </Aside>
+</ContentSlide>

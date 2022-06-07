@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+	
+	<Target Name="BuildCssDev" Condition="'$(Configuration)' == 'Debug'" AfterTargets="Build">
+		<Exec Command="sass ./Theme/app.scss ./wwwroot/app.css" />
+	</Target>
+	<Target Name="BuildCssProd" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Build">
+		<Exec Command="sass ./Theme/app.scss ./wwwroot/app.css" />
+	</Target>
+	<ItemGroup>
+	  <None Remove="Slides\Isolation\How.razor.css" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="Slides\Isolation\How.razor.css" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="BlazorComponentUtilities" Version="1.8.0" />
+		<PackageReference Include="HighlightBlazor" Version="0.1.9" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="wwwroot\fonts\MouseMemoirs-Regular.ttf" />
+		<None Include="wwwroot\fonts\OFL.txt" />
+	</ItemGroup>
+
+</Project>

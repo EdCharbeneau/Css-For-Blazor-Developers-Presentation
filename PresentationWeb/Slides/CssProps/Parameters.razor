@@ -1,0 +1,30 @@
+﻿@namespace CssProps
+
+<ContentSlide Title="Controling CSS with Component Parameters">
+    <Content>
+        <ul>
+            <li>Parameters as flags (bool, enum) that write CSS classes</li>
+            <li>Parameters as strings that directly write to CSS classes</li>
+            <li>Parameters as strings that directly write to CSS variables <small>through inline styles</small></li>
+        </ul>
+        <CodeHighlight>
+            &lt;button class="button @@CssClass" .../&gt;
+            @@code {
+                [Parameter]
+                public string CssClass { get; set; }
+            }
+        </CodeHighlight>
+    </Content>
+    <Aside>
+        <CodeHighlight>
+            &lt;Button CssClass="warning"...
+        </CodeHighlight>
+        <div class="flex">
+            <Button Text="Default" />
+            <Button Text="Warning" CssClass="warning" />
+            <Button Text="Success" CssClass="success" />
+            <Button Text="Danger" CssClass="danger" />
+            <Button Text="Info" CssClass="info" />
+        </div>
+    </Aside>
+</ContentSlide>

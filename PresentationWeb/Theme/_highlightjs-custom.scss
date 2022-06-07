@@ -1,0 +1,18 @@
+﻿// Used for highlight.js
+.language-bash {
+    color: lightseagreen;
+}
+
+pre {
+    max-width: 100%;
+    display: grid;
+
+    & code::-webkit-scrollbar {
+        height: 5px;
+        background-color: #aaa;
+    }
+
+    & code::-webkit-scrollbar-thumb {
+        background-color: var(--primary-color);
+    }
+}

@@ -1,0 +1,31 @@
+﻿@namespace Sass
+<ContentSlide Title="What is Sass">
+    <Content>
+        <ul>
+            <li>
+                Superset language extension for CSS. Any CSS can be read/compiled by Sass.
+            </li>
+            <li>
+                Sass is developed in Dart. It can be used with or without JavaScript/npm tooling.
+            </li>
+            <li>
+                Sass features: variables, nesting, modules, and mixins. This allows for more modular and maintainable CSS code.
+            </li>
+        </ul>
+
+    </Content>
+    <Aside>
+        <CodeHighlight Indent="true" CodeLanguage="scss">
+            //import a module
+            @@use "module1" as m;
+            //create a variable
+            $primary-color: m.$color;
+            //use a variable
+            body { color: $primary-color; }
+            //mixins
+            @@mixin rounded { border-radius: $radius; }
+            .button { @@include rounded; }
+        </CodeHighlight>
+        <p>An example of Sass code.</p>
+    </Aside>
+</ContentSlide>
