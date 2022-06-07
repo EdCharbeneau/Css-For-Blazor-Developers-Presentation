@@ -7,4 +7,13 @@
 
     [Parameter]
     public RenderFragment ChildContent { get; set; } = default!;
+
+    [CascadingParameter]
+    public SlideContainer SlideContainer { get; set; } = default!;
+
+    protected override Task OnInitializedAsync()
+    {
+        SlideContainer.AddSlide(this);
+        return base.OnInitializedAsync();
+    }
 }

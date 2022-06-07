@@ -1,111 +1,77 @@
 ﻿@page "/"
 
-<div @ref="presentation" tabindex="0" @onkeydown="OnKeyDown">
-    <Slide @ref="slides[0]">
+<SlideContainer>
+
+    <Slide>
         <Agenda />
     </Slide>
-    <Slide @ref="slides[1]">
+    <Slide>
         <Sass.What />
     </Slide>
-    <Slide @ref="slides[2]">
+    <Slide>
         <Sass.When />
     </Slide>
-    <Slide @ref="slides[3]">
+    <Slide>
         <Sass.How />
     </Slide>
-    <Slide @ref="slides[4]">
+    <Slide>
         <Sass.MsBuild />
     </Slide>
-    <Slide @ref="slides[5]">
+    <Slide>
         <Sass.Npm />
     </Slide>
-    <Slide @ref="slides[6]">
+    <Slide>
         <Sass.Tips />
     </Slide>
-    <Slide @ref="slides[7]">
+    <Slide>
         <Transition Title="CSS Isolation"
                     Subtitle="Scoped, Component based CSS" />
     </Slide>
-    <Slide @ref="slides[8]">
+    <Slide>
         <Isolation.What />
     </Slide>
-    <Slide @ref="slides[9]">
+    <Slide>
         <Isolation.How />
     </Slide>
-    <Slide @ref="slides[10]">
+    <Slide>
         <Isolation.When />
     </Slide>
-    <Slide @ref="slides[11]">
+    <Slide>
         <Isolation.Deep />
     </Slide>
-    <Slide @ref="slides[12]">
+    <Slide>
         <Transition Title="Managing CSS Scope"
                     Subtitle="Choosing where to allow modifaction" />
     </Slide>
-    <Slide @ref="slides[13]">
+    <Slide>
         <CssProps.Scale />
     </Slide>
-    <Slide @ref="slides[14]">
+    <Slide>
         <CssProps.Basics />
     </Slide>
-    <Slide @ref="slides[15]">
+    <Slide>
         <CssProps.Parameters />
     </Slide>
-    <Slide @ref="slides[16]">
+    <Slide>
         <CssProps.Scope />
     </Slide>
-    <Slide @ref="slides[17]">
+    <Slide>
         <CssProps.CssBuilder />
     </Slide>
-    <Slide @ref="slides[18]">
+    <Slide>
         <Transition Title="Frameworks"
                     Subtitle="Tailwind, Bootstrap, and Component Libraries" />
     </Slide>
-    <Slide @ref="slides[19]">
+    <Slide>
         <Frameworks.Tailwind />
     </Slide>
-    <Slide @ref="slides[20]">
+    <Slide>
         <Frameworks.Bootstrap />
     </Slide>
-        <Slide @ref="slides[21]">
+    <Slide>
         <Frameworks.ComponentLibs />
     </Slide>
-</div>
-
-@code {
-    int index = 0;
-    Dictionary<int, Slide?> slides = new();
-
-    ElementReference presentation;
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
-        {
-            slides[0].IsVisible = true;
-            StateHasChanged();
-        }
-        base.OnAfterRender(firstRender);
-    }
-    private void OnKeyDown(KeyboardEventArgs args)
-    {
-        if (args.Key == "ArrowRight")
-        {
-            if (index < slides.Count - 1)
-            {
-                slides[index].IsVisible = false;
-
-                index += 1;
-            }
-        }
-        if (args.Key == "ArrowLeft")
-        {
-            if (index > 0)
-            {
-                slides[index].IsVisible = false;
-                index -= 1;
-            }
-        }
-        slides[index].IsVisible = true;
-    }
-}
+    <Slide>
+        <Resources/>
+    </Slide>
+</SlideContainer>

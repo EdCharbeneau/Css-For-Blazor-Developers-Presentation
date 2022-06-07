@@ -6,8 +6,12 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color-darker);
 }
 
-.img-responsive {
+img.responsive {
     max-width: 100%;
+}
+
+img.avatar {
+    border-radius:50%;
 }
 
 a, a.primary {

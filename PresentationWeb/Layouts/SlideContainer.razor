@@ -1,0 +1,56 @@
+﻿<CascadingValue Value="this">
+    <div tabindex="0" @onkeydown="OnKeyDown">
+        @ChildContent
+    </div>
+</CascadingValue>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+
+    int index = 0;
+    Dictionary<int, Slide> slides = new();
+
+    public void AddSlide(Slide s)
+    {
+        if (slides.Count == 0)
+        {
+            s.IsVisible = true;
+        }
+        slides.Add(slides.Count, s);
+    }
+
+    public void Next()
+    {
+        if (index < slides.Count - 1)
+        {
+            slides[index].IsVisible = false;
+            index += 1;
+        }
+        slides[index].IsVisible = true;
+        StateHasChanged();
+    }
+
+    public void Previous()
+    {
+        if (index > 0)
+        {
+            slides[index].IsVisible = false;
+            index -= 1;
+        }
+        slides[index].IsVisible = true;
+        StateHasChanged();
+    }
+
+    private void OnKeyDown(KeyboardEventArgs args)
+    {
+        if (args.Key == "ArrowRight")
+        {
+            Next();
+        }
+        if (args.Key == "ArrowLeft")
+        {
+            Previous();
+        }
+    }
+}
