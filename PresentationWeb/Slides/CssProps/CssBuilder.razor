@@ -3,21 +3,21 @@
     <Content>
         <p>A clean code approach to conditional CSS in Razor Components.</p>
         <CodeHighlight CodeLanguage="bash">
-           $ dotnet add package BlazorComponentUtilities
+            $ dotnet add package BlazorComponentUtilities
         </CodeHighlight>
     </Content>
     <Aside>
         <CodeHighlight>
             var ClassToRender = CssBuilder.Default("item-one")
-                            .AddClass("item-two", when: true)
-                            .AddClass("item-three", when: false)
-                            .AddClass("item-four");
+            .AddClass("item-two", when: true)
+            .AddClass("item-three", when: false)
+            .AddClass("item-four");
 
             // ClassToRender: "item-one item-two item-four"
         </CodeHighlight>
         <CodeHighlight>
             string StyleToRender => StyleBuilder.Default("color", "white")
-                                    .AddStyle("border", "1px solid black");
+            .AddStyle("border", "1px solid black");
 
             // StyleToRender: "color:white;border:1px solid black"
         </CodeHighlight>

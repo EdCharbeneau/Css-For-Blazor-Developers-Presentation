@@ -1,15 +1,27 @@
 ﻿<CascadingValue Value="this">
-    <div tabindex="0" @onkeydown="OnKeyDown">
+    <div tabindex="0" @onkeydown="OnKeyDown" @ref="containerRef">
         @ChildContent
     </div>
 </CascadingValue>
 
 @code {
+    ElementReference containerRef;
+
     [Parameter]
     public RenderFragment ChildContent { get; set; } = default!;
 
     int index = 0;
     Dictionary<int, Slide> slides = new();
+
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            containerRef.FocusAsync();
+        }
+        return base.OnAfterRenderAsync(firstRender);
+    }
 
     public void AddSlide(Slide s)
     {
