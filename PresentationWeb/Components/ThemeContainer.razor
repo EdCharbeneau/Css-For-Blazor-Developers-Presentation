@@ -1,0 +1,16 @@
+﻿@using BlazorComponentUtilities;
+
+<div style="@Theme">
+    @ChildContent
+</div>
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string? Theme { get; set; }
+
+
+}

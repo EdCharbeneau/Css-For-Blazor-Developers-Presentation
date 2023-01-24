@@ -1,4 +1,5 @@
-﻿body {
+﻿div#app > div {
+    color: var(--app-foreground, black);
     background-color: var(--app-background);
 }
 

@@ -1,0 +1,28 @@
+﻿footer {
+    position: sticky;
+    top: 100vh;
+    display: flex;
+    justify-content:end;
+    gap: 0.5rem;
+}
+
+select {
+    cursor: pointer;
+    border-radius: 0;
+    background-color: var(--app-background);
+    border: none;
+    border-bottom: 2px solid var(--secondary-color-darker);
+    color: var(--primary-color-darker);
+    appearance: none;
+    padding: 0 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+    select:hover,
+    select:focus {
+        color: var(--primary-color-darker);
+        background-color: var(--app-background);
+        border-bottom-color: #var(--secondary-color-darker);
+    }

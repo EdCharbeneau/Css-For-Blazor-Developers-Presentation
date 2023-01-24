@@ -1,10 +1,16 @@
 ﻿@inherits LayoutComponentBase
 @inject HighlightService highlightJs
 
-<div>
-    @Body
-</div>
+<ThemeContainer Theme="@selectedTheme">
+    <div>
+        @Body
+        <ThemeChooser @bind-Theme="@selectedTheme" />
+    </div>
+</ThemeContainer>
+
 @code {
+    string? selectedTheme;
+
     protected override Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -14,5 +20,5 @@
         }
         return base.OnAfterRenderAsync(firstRender);
     }
-
+    void OnChange(string e) => selectedTheme = e;
 }
