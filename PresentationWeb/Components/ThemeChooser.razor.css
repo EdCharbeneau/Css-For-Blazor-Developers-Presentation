@@ -22,7 +22,7 @@ select {
 
     select:hover,
     select:focus {
-        color: var(--primary-color-darker);
-        background-color: var(--app-background);
-        border-bottom-color: #var(--secondary-color-darker);
+        color: var(--primary-color-contrast);
+        background-color: var(--primary-color);
+        border-bottom-color: var(--secondary-color-contrast);
     }
