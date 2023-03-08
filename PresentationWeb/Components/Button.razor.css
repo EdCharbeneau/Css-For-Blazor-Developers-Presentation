@@ -1,54 +1,41 @@
-﻿.button {
-    color: var(--primary-color-darker);
+﻿button {
+    --button-hover-text-color: var(--primary-contrast-color);
+    --button-hover-bg-color: var(--primary-contrast-color);
+    color: var(--button-text-color, var(--primary-color-darker));
     background-color: transparent;
-    border: 2px solid var(--primary-color-darker);
-    padding: 13px 50px;
+    border: 2px solid var(--button-border-color, var(--primary-color-darker));
+    border-radius: 5px;
+    font-size: 16px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 0.4s;
+    padding-block: 1em;
+    padding-inline: 3em;
     cursor: pointer;
-    border-radius: 5px;
+    display: inline-block;
+    transition-duration: 0.4s;
 }
-
-    .button:hover {
-        color: var(--primary-contrast-color);
-        background-color: var(--primary-color-darker);
+    button:hover {
+        --button-hover-bg-color: var(--primary-color-darker);
+        color: var(--button-hover-text-color);
+        background-color: var(--button-hover-bg-color);
     }
 
-.danger {
-    background-color: transparent;
-    border: 2px solid var(--danger-color);
+button.danger {
+    --button-border-color: var(--danger-color);
+    --button-hover-bg-color: var(--danger-color);
 }
 
-    .danger:hover {
-        background-color: var(--danger-color);
-    }
-
-.warning {
-    background-color: transparent;
-    border: 2px solid var(--warning-color);
+button.warning {
+    --button-hover-bg-color: var(--warning-color);
+    --button-border-color: var(--warning-color);
 }
 
-    .warning:hover {
-        background-color: var(--warning-color);
-    }
-
-.info {
-    background-color: transparent;
-    border: 2px solid var(--info-color);
+button.info {
+    --button-hover-bg-color: var(--info-color);
+    --button-border-color: var(--info-color);
 }
 
-    .info:hover {
-        background-color: var(--info-color);
-    }
-
-.success {
-    background-color: transparent;
-    border: 2px solid var(--success-color);
+button.success {
+    --button-hover-bg-color: var(--success-color);
+    --button-border-color: var(--success-color);
 }
-
-    .success:hover {
-        background-color: var(--success-color);
-    }
