@@ -14,6 +14,7 @@
     --orange: #fd6012;
     --denim: #1d1942;
     --sky: #aeeaf8;
+    --app-foreground: black;
     --app-background: antiquewhite;
     --font-family-base: MouseMemoirs-Regular;
     --font-size-root: 32px;
@@ -35,4 +36,14 @@
     --bubble-bg-color: var(--primary-color-darker);
     --bubble-text-color: var(--primary-color);
     --bubble-size: var(--font-size-root);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --app-foreground: antiquewhite;
+        --app-background: var(--denim);
+        --primary-color-darker: var(--sky);
+        --primary-color: var(--denim);
+        --primary-contrast-color: var(--app-background);
+    }
 }

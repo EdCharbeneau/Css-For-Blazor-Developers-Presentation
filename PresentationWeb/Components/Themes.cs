@@ -24,9 +24,21 @@ namespace PresentationWeb.Components
                 ;
         public static StyleBuilder Default => StyleBuilder.Empty();
 
+        public static StyleBuilder Light => StyleBuilder.Empty()
+                .AddStyle("--app-foreground", "black")
+                .AddStyle("--app-background", "antiquewhite")
+                .AddStyle("--primary-color-darker", " var(--denim)")
+                .AddStyle("--primary-color", " var(--sky)")
+                .AddStyle("--primary-contrast-color", " var(--app-background)")
+                .AddStyle("--secondary-color", "var(--orange)")
+                .AddStyle("--secondary-contrast-color", " var(--app-background)")
+                .AddStyle("--secondary-color-darker", " var(--orange-peel)")
+            ;
+
         public static Dictionary<string, StyleBuilder> ThemeChoices = new()
         {
             { "default", Default },
+            { "light", Light },
             { "dark", Dark },
             { "high", HighContrast }
         };
